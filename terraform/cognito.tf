@@ -15,6 +15,6 @@ resource "aws_apigatewayv2_authorizer" "cognito_auth" {
   identity_sources = ["$request.header.Authorization"]
   jwt_configuration {
     audience = [aws_cognito_user_pool_client.client.id]
-    issuer   = aws_cognito_user_pool.users.endpoint
+    issuer   = "https://cognito-idp.eu-north-1.amazonaws.com/${aws_cognito_user_pool.users.id}"
   }
 }
