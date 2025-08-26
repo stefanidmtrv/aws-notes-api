@@ -1,4 +1,6 @@
 terraform/.terraform.lock.hcl
 terraform/.terraform/*
 terraform/*.tfplan
-terraform/terraform.tfstate
+terraform.tfstate
+terraform/lambda-notes.zip
+terraform/terraform.tfstate.backup

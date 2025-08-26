@@ -6,6 +6,10 @@ resource "aws_cognito_user_pool_client" "client" {
   name            = "notes-client"
   user_pool_id    = aws_cognito_user_pool.users.id
   generate_secret = false
+  explicit_auth_flows = [
+    "ALLOW_USER_PASSWORD_AUTH",
+    "ALLOW_REFRESH_TOKEN_AUTH"
+  ]
 }
 
 resource "aws_apigatewayv2_authorizer" "cognito_auth" {
