@@ -6,6 +6,7 @@ terraform/lambda-notes.zip
 terraform/terraform.tfstate.backup
 
 .venv/
+.vscode/
 __pycache__/
 *.pyc
 *.pyo
