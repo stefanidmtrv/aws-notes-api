@@ -1,16 +1,11 @@
-resource "aws_dynamodb_table" "notes" {
-  name         = "notes"
+resource "aws_dynamodb_table" "notes_table" {
+  name         = "notes_table"
   billing_mode = "PAY_PER_REQUEST"
-  hash_key     = "userId"
-  range_key    = "noteId"
+  hash_key     = "user_id"
 
   attribute {
-    name = "userId"
+    name = "user_id"
     type = "S"
   }
 
-  attribute {
-    name = "noteId"
-    type = "S"
-  }
 }

@@ -4,3 +4,10 @@ terraform/*.tfplan
 terraform.tfstate
 terraform/lambda-notes.zip
 terraform/terraform.tfstate.backup
+
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
