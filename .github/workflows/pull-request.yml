@@ -19,11 +19,10 @@ jobs:
         with:
           terraform_version: 1.12.2
 
-      - name: Terraform Init
-        run: terraform init -backend=false
-
       - name: Terraform Format Check
         run: terraform fmt -check -recursive
+        working-directory: ./terraform
 
       - name: Terraform Validate
         run: terraform validate
+        working-directory: ./terraform
