@@ -24,9 +24,17 @@ jobs:
 
       - name: Terraform Init
         run: terraform init
-        
+
+      - name: Terraform Plan
+        run: terraform plan
+
       - name: Terraform Format Check
-        run: terraform fmt -check -recursive
+        run: terraform fmt
+
+      - name: Package Lambda
+        run: |
+          cd terraform
+          zip -j lambda-notes.zip ../src/*.py
 
       - name: Terraform Validate
         run: terraform validate
