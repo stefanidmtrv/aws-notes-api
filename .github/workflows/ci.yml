@@ -33,3 +33,8 @@ jobs:
       - name: Terraform Validate
         run: terraform validate 
 
+      - name: Plan
+        working-directory: terraform
+        run: terraform plan -out=tfplan
+
+

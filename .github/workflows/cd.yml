@@ -32,10 +32,6 @@ jobs:
         working-directory: terraform
         run: zip -j lambda-notes.zip ../src/*.py
 
-      - name: Plan
-        working-directory: terraform
-        run: terraform plan -out=tfplan
-
       - name: Apply
         working-directory: terraform
         run: terraform apply -auto-approve tfplan
