@@ -29,9 +29,7 @@ jobs:
         run: terraform fmt
 
       - name: Package Lambda
-        run: |
-          cd terraform
-          zip -j lambda-notes.zip ../src/*.py
+        run: zip -j lambda-notes.zip ../src/*.py
 
       - name: Terraform Validate
         run: terraform validate 
@@ -39,4 +37,4 @@ jobs:
       - name: Terraform Plan
         run: terraform plan
 
-       
+
