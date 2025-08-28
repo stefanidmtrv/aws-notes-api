@@ -27,6 +27,9 @@ jobs:
       - name: Init Terraform
         working-directory: terraform
         run: terraform init
+      
+      - name: Package Lambda
+        run: zip -j lambda-notes.zip ../src/*.py
 
       - name: Plan
         working-directory: terraform
