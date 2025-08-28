@@ -4,6 +4,7 @@ locals {
   runtime                 = "python3.12"
   integration_role_name   = "${local.app_name}-api-integration-role"
   integration_policy_name = "${local.app_name}-api-integration-policy"
+  builtin_layers_arn      = ["arn:aws:lambda:eu-north-1:017000801446:layer:AWSLambdaPowertoolsPythonV3-python312-x86_64:19"]
 }
 
 ###################
@@ -18,6 +19,8 @@ resource "aws_lambda_function" "notes_lambda" {
   filename         = "lambda-notes.zip"
   source_code_hash = filebase64sha256("lambda-notes.zip")
   depends_on       = [aws_cloudwatch_log_group.lambda_log_group]
+
+  layers = local.builtin_layers_arn
 
 }
 
